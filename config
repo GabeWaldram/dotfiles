@@ -1,0 +1,79 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+
+#[click]
+#full_text=Click me!
+#command=echo "Got clicked with button $button"
+#color=#F79494
+
+[pigeon]
+full_text=🕊
+color=#16A085
+
+[cpu_usage]
+command=cpu_usage
+interval=1
+LABEL=CPU 
+#min_width=CPU: 100.00%
+#T_WARN=50
+#T_CRIT=80
+#DECIMALS=2
+
+[cpu temp]
+command=cpuTemp
+interval=5
+
+[home space]
+command=disk; [[ -z "${BLOCK_BUTTON}" ]] || thunar ~/ &
+LABEL= /home 
+#DIR=$HOME
+#ALERT_LOW=10
+interval=60
+
+[root space]
+command=disk
+LABEL=/root 
+DIR=/
+#ALERT_LOW=10
+interval=60
+
+[HDD space]
+command=disk; [[ -z "${BLOCK_BUTTON}" ]] || thunar /media/TOSHIBA &
+LABEL=HDD 
+DIR=/media/TOSHIBA
+interval=60
+
+[battery]
+command=battery; [[ -z "${BLOCK_BUTTON}" ]] || xfce4-power-manager-settings &
+interval=10
+
+#[bandwidth3]
+#command=bandwidth
+#interval=persist
+#markup=pango
+##LABEL=<span font='FontAwesome'>  </span>
+##IFACE=[automatically determined]
+##DT=3
+##UNIT=Mb
+## Exposed variables: rx, wx, tx, unit, iface
+##PRINTF_COMMAND=printf "${LABEL}%-5.1f/%5.1f %s/s\n", rx, wx, unit;
+
+[time]
+command=i3time; [[ -z "${BLOCK_BUTTON}" ]] || orage -t &
+interval=1
+
+#[volume]
+#command=volumeicon
+#interval=once
+
+[spacer]
+full_text= 
