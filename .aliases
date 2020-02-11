@@ -1,0 +1,57 @@
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+# Quickly access config and rc files
+alias \
+	aliases='vim ~/.aliases' \
+	bashrc='vim ~/.bashrc' \
+	conkycfg='sudo vim /usr/share/conky/conky_maia' \
+	i3config='vim ~/.i3/config' \
+	vimrc='vim ~/.vimrc'
+
+# Verbosity and useful settings 
+alias \
+	bat="cat /sys/class/power_supply/BAT?/capacity" \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -v" \
+	df='df -h' \
+	free='free -m' \
+	mkd="mkdir -pv" \
+	lsblk='lsblk | grep -v "loop"' \
+	yt="youtube-dl --add-metadata -i" \
+	yta="yt -x -f bestaudio/best" \
+	ffmpeg="ffmpeg -hide_banner" \
+	xclass='xprop | grep CLASS'
+
+# Colorise commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	cl='clear' \
+	ka="killall" \
+	g="git" \
+	YT="youtube-viewer" \
+	sdn="sudo shutdown -h now" \
+	f="$FILE" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	p="sudo pacman" \
+	nf='neofetch | lolcat' \
+	sx='startx' \
+	tt='w3m https://timetable.shu.ac.uk/timetable/student/mytimetable.asp'
+
+# Just for fun!
+alias \
+	starwars='telnet towel.blinkenlights.nl' \
+	cowe='clear && echo "Okay, Retard" | cowsay | nms && echo ""'
+	#jay_is_le_gay="shutdown 0"
+
+alias pissh='ssh pi@100.65.247.40'
+alias kalissh='ssh root@192.168.1.5'
+alias panic='clear && cat .panic'
