@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#DELL SENSOR
+#CPUT=$(sensors dell_smm-virtual-0 | grep -E -A0 'CPU' | grep -E -o '+[0-9][0-9].[0-9]°C')
+
+#CORETEMP DRIVER SENSOR
+CPUT=$(sensors coretemp-isa-0000 | grep -E -o '[0-9][0-9].[0-9]°C' | grep -E -m1 '[0-9][0-9].[0-9]°C')
+
+#echo "CPU: $CPUT"
+echo "$CPUT"
+
+exit 0

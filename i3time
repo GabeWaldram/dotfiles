@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#TIME=$(date '+%Y-%m-%d %H:%M:%S')
+TIME=$(date '+%H:%M:%S')
+
+echo " $TIME"
+
+exit 0
