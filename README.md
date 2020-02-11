@@ -1,2 +1,2 @@
 # dotfiles
-Custom config files for i3wm
+Custom config files for i3wm and others
